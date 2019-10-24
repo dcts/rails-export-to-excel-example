@@ -1,0 +1,14 @@
+# @sheet_name
+# @header_rows
+# @items = array of arrays
+
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "@sheet_name") do |sheet|
+  # Create the header row
+  sheet.add_row @header_row
+  # Create entries for each item
+  @item_rows.each do |row|
+    sheet.add_row row
+  end
+end
